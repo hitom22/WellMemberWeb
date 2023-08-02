@@ -31,8 +31,18 @@
 			</li>
 		</ul>
 		<a href="/notice/list.do">목록으로 이동</a><br>
-		<a href="#">수정하기</a><br>
-		<a href="#">삭제하기</a><br>
+		<a href="/notice/modify.do?noticeNo=${notice.noticeNo }">수정하기</a><br>
+<!-- 			DELETE * FROM NOTICE_TBL WHERE NOTICE_NO = ?  -->
+		<a href="javascript:void(0)" onclick="deleteCheck();">삭제하기</a><br>
+<%-- 		<a href="/notice/delete.do?noticeNo=${notice.noticeNo }" onclick="">삭제하기</a><br> --%>
 <!-- 		<button id="" onclick="">삭제하기</button> -->
+		<script>
+			const deleteCheck = () => {
+				const noticeNo = '${notice.noticeNo }';
+				if(confirm("u really wanna delete it?")) {
+					location.href = "/notice/delete.do?noticeNo="+noticeNo;
+				}
+			}
+		</script>
 	</body>
 </html>
