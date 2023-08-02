@@ -1,4 +1,4 @@
-package member.controller;
+package student.controller;
 
 import java.io.IOException;
 import javax.servlet.ServletException;
@@ -13,7 +13,7 @@ import member.model.vo.Member;
 /**
  * Servlet implementation class EnrollController
  */
-@WebServlet("/member/register.do")
+@WebServlet(name = "StudentEnrollController", urlPatterns = { "/student/enroll.do" })
 public class EnrollController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
@@ -30,7 +30,7 @@ public class EnrollController extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		request.getRequestDispatcher("/WEB-INF/views/member/enroll.jsp").forward(request, response);
+		
 	}
 
 	/**
